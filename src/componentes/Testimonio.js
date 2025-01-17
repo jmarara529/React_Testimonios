@@ -4,8 +4,29 @@ import '../hojas-de-estilo/Testimonio.css';
 
 //creamos un componente para controlar las palabras en negrita
 
+//funcion que pone texto en negrita
 function TextoTestimonio({ texto }) {
 
+  //pone todo el texto en negrita a partir de 'freeCodeCamp'
+
+  
+  const partes = texto.split(/(freeCodeCamp)/);
+
+  return (
+    <p className='texto-testimonio'>
+      {partes.map((parte, index) => {
+        if (parte === 'freeCodeCamp' || index > partes.indexOf('freeCodeCamp')) {
+          return <strong key={index}>{parte}</strong>;
+        }
+        return parte;
+      })}
+    </p>
+  );
+  
+
+  //pone en negrita solo la palabra 'freeCodeCamp'
+
+  /*
   const partes = texto.split('freeCodeCamp');
 
   return (
@@ -18,12 +39,14 @@ function TextoTestimonio({ texto }) {
       ))}
     </p>
   );
-  
+  */
 
-    //const partes = texto.split(/(freeCodeCamp.*?)(\s|$)/gi);
+
+  /*
+  const partes = texto.split(/(freeCodeCamp.*?)(\s|$)/gi);
 
   
-  /*return (
+  return (
     <p className='texto-testimonio'>
       {partes.map((parte, index) =>
         parte.match(/freeCodeCamp/gi) ? (
