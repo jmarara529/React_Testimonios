@@ -9,7 +9,7 @@ function TextoTestimonio({ texto }) {
 
   //pone todo el texto en negrita a partir de 'freeCodeCamp'
 
-  
+/*  
   const partes = texto.split(/(freeCodeCamp)/);
 
   return (
@@ -22,11 +22,14 @@ function TextoTestimonio({ texto }) {
       })}
     </p>
   );
+  */
   
 
   //pone en negrita solo la palabra 'freeCodeCamp'
 
-  /*
+  //he seleccionado este metodo porque me parece más eficiente y legible que el anterior, a parte destaca solo la palabra 'freeCodeCamp' ya que en el contexto que se usa es para dar
+  //a conocer la plataforma y hacerle publicidad
+  
   const partes = texto.split('freeCodeCamp');
 
   return (
@@ -39,7 +42,7 @@ function TextoTestimonio({ texto }) {
       ))}
     </p>
   );
-  */
+  
 
 
   /*
@@ -68,6 +71,9 @@ function Testimonio(props) {
   //contenedor principal que contiene una imagen y tres parrafos
   //con la comillas invertidas podemos añadir codigo js dentro de html, tal como se hace en la imagen
   //las comillas invertidas se llama literales y para añadir js hay que añadir $
+
+  //la imagen se importa con require y se le pasa la ruta de la imagen
+  //se le pasa un alt a la imagen, este alt se pasa como props, es decir, se le pasa un texto que se va a mostrar en caso de que la imagen no se pueda cargar en el archivo app.js
   
   return (
     <div className='contenedor-testimonio'>

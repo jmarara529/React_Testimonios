@@ -1,6 +1,7 @@
 //tenemos que importar el css y el Testimonio
 import './App.css';
 import Testimonio from './componentes/Testimonio';
+import testimonios from './datos/DatosTestimonio';
 
 function App() {
   //nuestro componente principal
@@ -9,6 +10,23 @@ function App() {
     <div className='App'>
       <div className='contenedor-principal'>
         <h1>Esto es lo que dicen nuestros alumnos sobre freeCodeCamp:</h1>
+
+        {/* mapeamos el array de testimonios contenidos en DatosTestimonios.js */}
+
+        {testimonios.map(testimonio => (
+          <Testimonio
+            nombre={testimonio.nombre}
+            pais={testimonio.pais}
+            imagen={testimonio.imagen}
+            alternativo={testimonio.alternativo}
+            cargo={testimonio.cargo}
+            empresa={testimonio.empresa}
+            testimonio={testimonio.testimonio}
+          />))
+          }
+
+        {/* testimonios introducidos manualmente
+
         <Testimonio
           nombre='Shawn Wang'
           pais='Singapur'
@@ -33,6 +51,7 @@ function App() {
           cargo='Ingeniera de Software'
           empresa='Spotify'
           testimonio='Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en freeCodeCamp me dio las habilidades y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.'/>
+        */}
       </div>
     </div>
   );
